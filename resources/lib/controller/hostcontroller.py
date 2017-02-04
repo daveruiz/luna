@@ -32,7 +32,7 @@ class HostController(BaseController):
         import struct
         import socket
         self.logger.info(
-            "Wake Host called for host: %s (IP: %s / MAC: %s)" % (host.name, host.local_ip, host.mac_address))
+            "Wake Host called for host: %s (IP: %s / MAC: %s)" % (host.name, host.get_host_ip(), host.mac_address))
         mac = host.mac_address.replace(':', '')
         self.logger.info("Cleared MAC: %s" % mac)
 

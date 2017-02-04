@@ -19,4 +19,12 @@ class HostDetails(object):
         self.gamelist_id = None
         self.key_dir = None
         self.state = self.STATE_UNKNOWN
-        self.reachability = self.REACH_UNKNOWN
+        # todo: figure out how to check this
+        # self.reachability = self.REACH_UNKNOWN
+        self.reachability = self.REACH_REMOTE
+
+    def get_host_ip(self):
+        if self.reachability == self.REACH_REMOTE:
+            return self.remote_ip
+        else:
+            return self.local_ip

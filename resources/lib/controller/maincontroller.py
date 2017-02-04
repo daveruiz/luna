@@ -54,7 +54,7 @@ class MainController(BaseController):
         hosts = self.host_manager.get_hosts()
         for key, host in hosts.iteritems():
             try:
-                StaticRequestService.get_static_server_info(host.local_ip)
+                StaticRequestService.get_static_server_info(host.get_host_ip())
                 host.state = host.STATE_ONLINE
             except ConnectionError:
                 host.state = host.STATE_OFFLINE

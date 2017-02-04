@@ -23,7 +23,7 @@ class RequestService(AbstractRequestService):
     def _reconfigure(self):
         host_details = self.host_context_service.get_current_context()
 
-        self.host_ip = host_details.local_ip
+        self.host_ip = host_details.get_host_ip()
         self.key_dir = host_details.key_dir
         self.base_url_https = 'https://%s:%s' % (self.host_ip, self.HTTPS_PORT)
         self.base_url_http = 'http://%s:%s' % (self.host_ip, self.HTTP_PORT)

@@ -24,7 +24,7 @@ class HostList(xbmcgui.WindowXMLDialog):
         for key, host in self.hosts.iteritems():
             item = xbmcgui.ListItem()
             item.setLabel(host.name)
-            item.setLabel2(host.local_ip)
+            item.setLabel2(host.get_host_ip())
             item.setProperty('gpu_type', host.gpu_type)
             item.setProperty('uuid', host.uuid)
 
