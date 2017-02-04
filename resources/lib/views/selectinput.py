@@ -249,7 +249,7 @@ class SelectInput(pyxbmct.AddonDialogWindow):
 
         map_file = '%s/%s.map' % (os.path.expanduser('~'), map_name)
 
-        success = self.controller.create_ctrl_map_new(progress_dialog, map_file, control.device)
+        success = self.controller.create_mapping_for_device(control.device, map_file, progress_dialog)
 
         if success:
             confirmed = xbmcgui.Dialog().yesno(
