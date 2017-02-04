@@ -128,7 +128,7 @@ class MoonlightHelper:
             self.internal_path + '/resources/lib/launchscripts/osmc/launch-helper-osmc.sh',
             self.internal_path + '/resources/lib/launchscripts/osmc/launch.sh',
             self.internal_path + '/resources/lib/launchscripts/osmc/moonlight-heartbeat.sh',
-            host.local_ip,
+            host.get_host_ip(),
             host.key_dir,
             game_id,
             self.config_helper.get_config_path(),
